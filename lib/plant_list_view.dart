@@ -64,7 +64,7 @@ class PlantListView extends StatelessWidget {
   Widget _menuItem(
       String name, String botanicalName, double moisture, int soilAgeOfDay) {
     return Container(
-        height: 160,
+        height: 120,
         decoration: BoxDecoration(
           color: Color.fromRGBO(207, 230, 193, 1),
           borderRadius: BorderRadius.circular(10),
@@ -80,45 +80,80 @@ class PlantListView extends StatelessWidget {
       children: <Widget>[
         Expanded(
             flex: 3,
-            child: Container(
-              color: Colors.lightGreen,
-              child: Row(
-                children: [
-                  Expanded(
-                      flex: 2,
+            child: Padding(
+              padding: EdgeInsets.only(top: 6, left: 6, right: 6),
+              child: Container(
+                decoration: BoxDecoration(
+                  // color: Color.fromRGBO(207, 230, 193, 1),
+                  color: Color.fromRGBO(255, 212, 137, 1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                        flex: 2,
+                        child: Container(
+                          padding: EdgeInsets.all(10),
+                          child: plantImage,
+                        )),
+                    Expanded(
+                      flex: 7,
                       child: Container(
-                        padding: EdgeInsets.all(10),
-                        color: Colors.lightGreen,
-                        child: plantImage,
-                      )),
-                  Expanded(
-                      flex: 5,
-                      child: Container(
-                        color: Colors.amber,
                         width: double.infinity,
-                        child: Column(
-                          children: [
-                            Align(
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                "hoge",
-                                textAlign: TextAlign.left,
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 25, left: 10),
+                          child: Column(
+                            children: [
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("hoge",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20)),
                               ),
-                            ),
-                            Text(
-                              "huga",
-                              textAlign: TextAlign.left,
-                            )
-                          ],
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  "hoge",
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ))
-                ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             )),
-        Expanded(flex: 1, child: Container(color: Colors.red)),
-        Expanded(flex: 1, child: Container(color: Colors.blue)),
+        Expanded(
+            flex: 1,
+            child: Center(
+              child: Container(
+                  width: double.infinity,
+                  child: Row(
+                    children: [
+                      _stateBar(Icons.opacity, "18%"),
+                      _stateBar(Icons.terrain, "57日")
+                    ],
+                  )),
+            )),
       ],
     );
+  }
+
+  Widget _stateBar(IconData icon, String text) {
+    return Expanded(
+        child: Row(
+      children: [
+        SizedBox(width: 20),
+        Icon(icon),
+        SizedBox(width: 5),
+        Text(
+          text,
+        )
+      ],
+    ));
   }
 
   // List<Widget> _cardList(List<Widget> cards) {
