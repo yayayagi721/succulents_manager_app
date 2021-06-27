@@ -4,9 +4,6 @@ import 'dart:math';
 
 // ignore: use_key_in_widget_constructors
 class PlantListView extends StatelessWidget {
-  String _colorName = 'No';
-  Color _color = Colors.black;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
