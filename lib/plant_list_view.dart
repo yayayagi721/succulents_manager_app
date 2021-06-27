@@ -1,12 +1,50 @@
+import 'package:circular_menu/circular_menu.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
 // ignore: use_key_in_widget_constructors
 class PlantListView extends StatelessWidget {
+  String _colorName = 'No';
+  Color _color = Colors.black;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _blankSpace(),
+      body: Stack(
+        children: [
+          _blankSpace(),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 35,
+              right: 15,
+            ),
+            child: CircularMenu(
+              toggleButtonSize: 30.0,
+              radius: 70,
+              toggleButtonBoxShadow: [
+                BoxShadow(),
+              ],
+              alignment: Alignment.topRight,
+              curve: Curves.easeIn,
+              startingAngleInRadian: 0.6 * pi,
+              endingAngleInRadian: 9.0 * pi,
+              toggleButtonColor: Color.fromRGBO(125, 179, 92, 1),
+              items: [
+                CircularMenuItem(
+                    boxShadow: [
+                      BoxShadow(),
+                    ],
+                    icon: Icons.settings_rounded,
+                    color: Colors.purple,
+                    onTap: () {}),
+                CircularMenuItem(boxShadow: [
+                  BoxShadow(),
+                ], icon: Icons.opacity, color: Colors.brown, onTap: () {})
+              ],
+            ),
+          ),
+        ],
+      ),
       backgroundColor: Colors.white,
       bottomNavigationBar: BottomAppBar(
         color: Color.fromRGBO(207, 230, 193, 1),
@@ -47,7 +85,7 @@ class PlantListView extends StatelessWidget {
 
   Widget _blankSpace() {
     return Container(
-      margin: EdgeInsets.only(top: 25, left: 25, right: 25),
+      margin: EdgeInsets.only(top: 55, left: 25, right: 25),
       child: _list(),
     );
   }
