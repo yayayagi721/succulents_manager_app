@@ -33,7 +33,9 @@ class PlantListView extends StatelessWidget {
                     ],
                     icon: Icons.settings_rounded,
                     color: Colors.purple,
-                    onTap: () {}),
+                    onTap: () {
+                      Navigator.pushNamed(context, "/settingList");
+                    }),
                 CircularMenuItem(boxShadow: [
                   BoxShadow(),
                 ], icon: Icons.opacity, color: Colors.brown, onTap: () {})

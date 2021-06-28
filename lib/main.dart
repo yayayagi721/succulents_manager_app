@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:succulents_manager_app/setting_list_view.dart';
 import 'package:succulents_manager_app/shopping_item.dart';
 
 import 'plant_list_view.dart';
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: '/plantList',
         routes: <String, WidgetBuilder>{
-          '/plantList': (BuildContext context) => PlantListView()
+          '/plantList': (BuildContext context) => PlantListView(),
+          '/settingList': (BuildContext context) => SettingListView()
         });
   }
 
