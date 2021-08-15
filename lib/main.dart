@@ -4,6 +4,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:succulents_manager_app/setting_list_view.dart';
 import 'package:succulents_manager_app/shopping_item.dart';
 
+import 'create_plant_view.dart';
 import 'plant_list_view.dart';
 
 void main() async {
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
         initialRoute: '/plantList',
         routes: <String, WidgetBuilder>{
           '/plantList': (BuildContext context) => PlantListView(),
-          '/settingList': (BuildContext context) => SettingListView()
+          '/settingList': (BuildContext context) => SettingListView(),
+          '/createPlant': (BuildContext context) => CreatePlantView(),
         });
   }
 

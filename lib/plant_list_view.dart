@@ -74,7 +74,9 @@ class PlantListView extends StatelessWidget {
         child: FittedBox(
           child: FloatingActionButton(
               child: Icon(Icons.add),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/createPlant");
+              },
               backgroundColor: Color.fromRGBO(125, 179, 92, 1)),
         ),
       ),
